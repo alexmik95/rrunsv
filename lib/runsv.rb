@@ -1,7 +1,10 @@
 require "runsv/version"
 
 module Runsv
-  class Error < StandardError; end
-  # Your code goes here...
+  class Error < StandardError
+    class UnknownCommand < Error; end
+  end
+
+  autoload :Service, "runsv/service"
   autoload :Config, "runsv/config"
 end
