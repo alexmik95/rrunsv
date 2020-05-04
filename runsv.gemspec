@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/alexmik95/runsv"
-    spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+    spec.metadata["changelog_uri"] = "https://github.com/alexmik95/runsv"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
           "public gem pushes."
