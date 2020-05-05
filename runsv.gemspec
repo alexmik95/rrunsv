@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "runsv/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "runsv"
+  spec.name = "rrunsv"
   spec.version = Runsv::VERSION
   spec.authors = ["alexmik95"]
   spec.email = ["alexmik95@gmail.com"]
