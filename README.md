@@ -1,4 +1,4 @@
-# Runsv
+# RRunsv
 
 Ruby wrapper for runsv monitor services 
 
@@ -7,7 +7,7 @@ Ruby wrapper for runsv monitor services
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'runsv'
+gem 'rrunsv'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install runsv
+    $ gem install rrunsv
 
 ## Usage
 
