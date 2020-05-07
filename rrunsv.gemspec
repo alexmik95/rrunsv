@@ -1,10 +1,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "runsv/version"
+require "rrunsv/version"
 
 Gem::Specification.new do |spec|
   spec.name = "rrunsv"
-  spec.version = Runsv::VERSION
+  spec.version = RRunsv::VERSION
   spec.authors = ["alexmik95"]
   spec.email = ["alexmik95@gmail.com"]
 

@@ -1,4 +1,4 @@
-module Runsv
+module RRunsv
   class Config
     attr_reader :fullpath, :path, :filename, :lines
 

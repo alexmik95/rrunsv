@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "runsv"
+require "rrunsv"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,4 +1,4 @@
-module Runsv
+module RRunsv
   class Service
     attr_reader :id, :run_text, :config
 
@@ -7,7 +7,7 @@ module Runsv
       @run_text = args.delete(:run_text)
       config_path = args.delete(:config_path)
       config_text = args.delete(:config_text)
-      @config = Runsv::Config.new({ fullpath: config_path, text: config_text })
+      @config = RRunsv::Config.new({ fullpath: config_path, text: config_text })
       ensure_directories
       write_run
     end
@@ -91,7 +91,7 @@ module Runsv
       if signals.include?(signal)
         system("sv #{signal} #{@id}")
       else
-        raise Runsv::Error::UnknownCommand
+        raise RRunsv::Error::UnknownCommand
       end
     end
 

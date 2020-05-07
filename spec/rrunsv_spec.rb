@@ -1,6 +1,6 @@
-RSpec.describe Runsv do
+RSpec.describe RRunsv do
   it "has a version number" do
-    expect(Runsv::VERSION).not_to be nil
+    expect(RRunsv::VERSION).not_to be nil
   end
 
   it "does something useful" do
