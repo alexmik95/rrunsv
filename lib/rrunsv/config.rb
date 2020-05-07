@@ -11,12 +11,16 @@ module RRunsv
       write(params.delete(:text).to_s)
     end
 
-    def ensure_directory
-      system("mkdir -p #{@path}")
-    end
-
     def read
       File.read(@fullpath) if File.exist?(@fullpath)
+    end
+
+    def write(text)
+      if dir_exist?
+        clear
+        lines = text.split("\n").compact.map(&:strip).reject(&:empty?)
+        add_lines(lines)
+      end
     end
 
     def clear
@@ -26,10 +30,14 @@ module RRunsv
       end
     end
 
-    def write(text)
-      clear
-      lines = text.split("\n").compact.map(&:strip).reject(&:empty?)
-      add_lines(lines)
+    private
+
+    def ensure_directory
+      system("mkdir -p #{@path}") unless @path.nil?
+    end
+
+    def dir_exist?
+      Dir.exist?(@path)
     end
 
     def add_lines(lines = [])
