@@ -2,13 +2,13 @@ module RRunsv
   class Config
     attr_reader :fullpath, :path, :filename, :lines
 
-    def initialize(args = {})
-      @fullpath = args.delete(:fullpath).to_s
+    def initialize(params = {})
+      @fullpath = params.delete(:fullpath).to_s
       @path = @fullpath.split("/")[0..-2].join("/")
       @filename = @fullpath.split("/").last
       @lines = []
       ensure_directory
-      write(args.delete(:text).to_s)
+      write(params.delete(:text).to_s)
     end
 
     def ensure_directory

@@ -2,11 +2,11 @@ module RRunsv
   class Service
     attr_reader :id, :run_text, :config
 
-    def initialize(args = {})
-      @id = parse_id(args.delete(:fork_id))
-      @run_text = args.delete(:run_text)
-      config_path = args.delete(:config_path)
-      config_text = args.delete(:config_text)
+    def initialize(params = {})
+      @id = parse_id(params.delete(:fork_id))
+      @run_text = params.delete(:run_text)
+      config_path = params.delete(:config_path)
+      config_text = params.delete(:config_text)
       @config = RRunsv::Config.new({ fullpath: config_path, text: config_text })
       ensure_directories
       write_run
