@@ -27,7 +27,7 @@ module RRunsv
     def add_lines(lines = [])
       File.open(@fullpath, "a") do |file|
         lines.each do |line|
-          file.write(line)
+          file.write(line + "\n")
           @lines << line
         end
       end
