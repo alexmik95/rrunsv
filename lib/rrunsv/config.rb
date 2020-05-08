@@ -24,6 +24,16 @@ module RRunsv
       end
     end
 
+    def add_lines(lines = [])
+      File.open(@fullpath, "a") do |file|
+        lines.each do |line|
+          file.write(line)
+          @lines << line
+        end
+      end
+      self
+    end
+
     def clear
       if File.exist?(@fullpath)
         File.delete(@fullpath)
@@ -39,16 +49,6 @@ module RRunsv
 
     def dir_exist?
       Dir.exist?(@path)
-    end
-
-    def add_lines(lines = [])
-      File.open(@fullpath, "a") do |file|
-        lines.each do |line|
-          file.write(line)
-          @lines << line
-        end
-      end
-      self
     end
   end
 end
