@@ -1,12 +1,11 @@
 module RRunsv
   class Config
-    attr_reader :fullpath, :path, :filename, :lines
+    attr_reader :fullpath, :path, :filename
 
     def initialize(params = {})
       @fullpath = params.delete(:fullpath).to_s
       @path = @fullpath.split("/")[0..-2].join("/")
       @filename = @fullpath.split("/").last
-      @lines = []
       ensure_directory
       text = params.delete(:text).to_s
       write(text) unless text.empty?
@@ -28,7 +27,6 @@ module RRunsv
       File.open(@fullpath, "a") do |file|
         lines.each do |line|
           file.write(line + "\n")
-          @lines << line
         end
       end
       self
@@ -37,7 +35,6 @@ module RRunsv
     def clear
       if File.exist?(@fullpath)
         File.delete(@fullpath)
-        @lines.clear
       end
     end
 
