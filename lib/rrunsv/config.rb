@@ -19,7 +19,7 @@ module RRunsv
     def write(text)
       if dir_exist?
         clear
-        lines = text.split("\n").compact.map(&:strip).reject(&:empty?)
+        lines = text.split("\n").compact.reject(&:empty?)
         add_lines(lines)
       end
     end
