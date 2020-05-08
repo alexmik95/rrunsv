@@ -1,9 +1,10 @@
 module RRunsv
   class Service
-    attr_reader :id, :run_text, :config
+    attr_reader :fork_id, :id, :run_text, :config
 
     def initialize(params = {})
-      @id = parse_id(params.delete(:fork_id))
+      @fork_id = params.delete(:fork_id)
+      @id = parse_id(@fork_id)
       @run_text = params.delete(:run_text)
       config_path = params.delete(:config_path)
       config_text = params.delete(:config_text)
