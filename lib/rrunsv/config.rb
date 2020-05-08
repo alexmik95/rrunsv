@@ -8,7 +8,8 @@ module RRunsv
       @filename = @fullpath.split("/").last
       @lines = []
       ensure_directory
-      write(params.delete(:text).to_s)
+      text = params.delete(:text).to_s
+      write(text) unless text.empty?
     end
 
     def read
